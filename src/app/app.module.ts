@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RequestComponent } from './request/request.component';
+import { PokedexService } from './pokedex.service';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,7 @@ import { RequestComponent } from './request/request.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [PokedexService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
