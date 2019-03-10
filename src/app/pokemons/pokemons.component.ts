@@ -4,20 +4,18 @@ import { Component, OnInit } from '@angular/core';
 import { PokedexService } from '../pokedex.service';
 
 @Component({
-  selector: 'app-request',
-  templateUrl: './request.component.html',
-  styleUrls: ['./request.component.scss']
+  selector: 'app-pokemons',
+  templateUrl: './pokemons.component.html',
+  styleUrls: ['./pokemons.component.scss']
 })
 
-export class RequestComponent implements OnInit {
+export class PokemonsComponent implements OnInit {
   count = '';
+  url = '';
   results = [];
 
   // add the http client you want
-  constructor(
-    private http: PokedexService
-    ) { }
-
+  constructor( private http: PokedexService ) { }
 
     // FROM ANGULAR DOCS: An Observable instance begins publishing values only when
     // someone subscribes to it. You subscribe by calling the subscribe() method of

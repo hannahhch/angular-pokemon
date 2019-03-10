@@ -1,0 +1,8 @@
+<h1>There are {{ count }} Pokemon</h1>
+<div class="pokemon-wrapper">
+    <a 
+        *ngFor="let result of results ; let i = index;" 
+        [innerHTML]="result.name" 
+        routerLink="{{'/pokemon/' + (i + 1) }}">
+    </a>
+</div>

@@ -10,7 +10,6 @@ import { HttpClient } from '@angular/common/http';
 export class PokedexService {
   // the API URLs here (encapsulated to this file)
   private pokemonURL = 'https://pokeapi.co/api/v2/pokemon';
-
   // at init, set the http client
   constructor(private http: HttpClient) { }
 
@@ -18,6 +17,10 @@ export class PokedexService {
   // you could pass in "any" here, but specifying the interface is v. typescript and good practice
    getPokemon() {
     return this.http.get<Pokemon>(this.pokemonURL);
+  }
+
+  getPokemonDetails(id: string) {
+    return this.http.get<SinglePokemon>(this.pokemonURL + '/' + id) ;
   }
 }
 
@@ -28,5 +31,11 @@ export interface Pokemon {
     previous: string;
     results: [];
   }
+
+// specify what the data will look like
+export interface SinglePokemon {
+   name: string;
+}
+
 
 

@@ -1,0 +1,11 @@
+.pokemon-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+
+    a {
+        border: solid 1px black;
+        padding: 15px;
+    }
+}
