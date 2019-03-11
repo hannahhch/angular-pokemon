@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from '@angular/router';
 
 // import the api service
 import { PokedexService } from '../pokedex.service';
@@ -12,24 +12,34 @@ import { PokedexService } from '../pokedex.service';
 export class PokemonComponent implements OnInit {
   urlId = '';
   name = '';
-  // add the http client you want
+  id = '';
+  xp = 0;
+  height = 0;
+  weight = 0;
+
+  sprites = {
+    front_default: '',
+  };
+
   constructor(
     private http: PokedexService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute // this gets the url route.
     ) { }
 
   ngOnInit() {
-    this.urlId = this.route.snapshot.paramMap.get('id');
 
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe(params => { // get the specific route after :
       this.urlId = params.get('id');
     });
 
-    console.log(this.urlId);
-
     this.http.getPokemonDetails(this.urlId).subscribe(res => {
       this.name = res.name;
+      this.id = res.id;
+      this.xp = res.base_experience;
+      this.height = res.height;
+      this.weight = res.weight;
       console.log(res);
+      this.sprites.front_default = res.sprites.front_default;
     });
   }
 

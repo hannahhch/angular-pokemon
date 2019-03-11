@@ -1,11 +1,42 @@
 .pokemon-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-column-gap: 25px;
     grid-row-gap: 25px;
+    margin: 50px;
 
-    a {
-        border: solid 1px black;
-        padding: 15px;
+    @media (min-width: 768px) {
+     grid-template-columns: 1fr 1fr ;
+    }
+
+     @media (min-width: 1000px) {
+     grid-template-columns: 1fr 1fr 1fr 1fr ;
+    }
+}
+
+.pokemon-card {
+    border: solid 1px black;
+    background-color: white;
+    padding: 15px 15px 50px 15px;
+    position: relative;
+    transition: box-shadow 500ms ease;
+
+    &:hover {
+        border-color: transparent;
+        -webkit-box-shadow: 7px 7px 23px -8px rgba(0,0,0,0.43);
+        -moz-box-shadow: 7px 7px 23px -8px rgba(0,0,0,0.43);
+        box-shadow: 7px 7px 23px -8px rgba(0,0,0,0.43);
+    }
+
+    span {
+        background-color: #900C3F;
+        color: white;
+        padding: 5px 0;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-transform: capitalize;
     }
 }

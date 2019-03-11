@@ -32,9 +32,15 @@ export interface Pokemon {
     results: [];
   }
 
-// specify what the data will look like
 export interface SinglePokemon {
    name: string;
+   id: string;
+   height: number;
+   weight: number;
+   base_experience: number;
+   sprites: {
+     front_default: string;
+   };
 }
 
 

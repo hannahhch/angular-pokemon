@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PokemonsComponent } from './pokemons/pokemons.component';
 import { PokedexService } from './pokedex.service';
 import { PokemonComponent } from './pokemon/pokemon.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { PokemonComponent } from './pokemon/pokemon.component';
     AppComponent,
     PokemonsComponent,
     PokemonComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
