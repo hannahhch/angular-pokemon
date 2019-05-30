@@ -24,4 +24,9 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display the title "The Pokedex"', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('header').textContent).toContain('The Pokedex');
+  });
 });

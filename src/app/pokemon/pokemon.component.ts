@@ -10,13 +10,13 @@ import { PokedexService } from '../pokedex.service';
   styleUrls: ['./pokemon.component.scss']
 })
 export class PokemonComponent implements OnInit {
-  urlId = '';
-  name = '';
-  id = '';
-  xp = 0;
-  height = 0;
-  weight = 0;
-  types = [];
+  urlId: string;
+  name: string;
+  id: string;
+  xp: number;
+  height: number;
+  weight: number;
+  types: {}[];
 
   sprites = {
     front_default: '',

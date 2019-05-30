@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 // import the api service
 import { PokedexService } from '../pokedex.service';
-import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-pokemons',
@@ -11,7 +10,7 @@ import { forEach } from '@angular/router/src/utils/collection';
 })
 
 export class PokemonsComponent implements OnInit {
-  count = '';
+  count: string;
   results = [];
   urls = [];
   ids = [];
