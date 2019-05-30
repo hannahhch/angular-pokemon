@@ -13,3 +13,55 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.type-tags {
+    padding: 0;
+}
+
+.type-tag {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: inline;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+
+    &:not(:first-child) {
+        margin-left: 10px;
+    }
+}
+
+.type-tag--flying {
+    background-color: #7FDEE2;
+}
+
+.type-tag--normal {
+    background-color: #C3C3C3;
+}
+
+.type-tag--grass {
+    background-color: #47C899;
+}
+
+.type-tag--poison {
+    background-color: #9547C8;
+    color: #fff;
+}
+
+.type-tag--water {
+    background-color: #7DDDFC;
+}
+
+.type-tag--fire {
+    background-color: #FA4337;
+    color: white;
+}
+
+.type-tag--bug {
+    background-color: #6C340F;
+    color: white;
+}
+
+
+

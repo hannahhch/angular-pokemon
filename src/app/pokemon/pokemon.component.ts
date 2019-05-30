@@ -16,6 +16,7 @@ export class PokemonComponent implements OnInit {
   xp = 0;
   height = 0;
   weight = 0;
+  types = [];
 
   sprites = {
     front_default: '',
@@ -23,12 +24,12 @@ export class PokemonComponent implements OnInit {
 
   constructor(
     private http: PokedexService,
-    private route: ActivatedRoute // this gets the url route.
+    private route: ActivatedRoute,
     ) { }
 
   ngOnInit() {
 
-    this.route.paramMap.subscribe(params => { // get the specific route after :
+    this.route.paramMap.subscribe(params => {
       this.urlId = params.get('id');
     });
 
@@ -38,9 +39,9 @@ export class PokemonComponent implements OnInit {
       this.xp = res.base_experience;
       this.height = res.height;
       this.weight = res.weight;
-      console.log(res);
+      console.log(res.types);
       this.sprites.front_default = res.sprites.front_default;
+      this.types = res.types;
     });
   }
-
 }

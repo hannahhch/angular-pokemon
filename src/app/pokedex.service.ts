@@ -41,6 +41,13 @@ export interface SinglePokemon {
    sprites: {
      front_default: string;
    };
+   types: [
+     {
+       type: {
+         name: string;
+       }
+     }
+   ];
 }
 
 

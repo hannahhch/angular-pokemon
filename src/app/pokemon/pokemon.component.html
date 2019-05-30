@@ -4,9 +4,28 @@
       <span>#{{ id }}</span>
     </h1>
     <img src="{{ sprites.front_default }}" alt="">
+
+    <ul class="type-tags">
+      <li 
+        *ngFor="let type of types"
+        class="type-tag"
+        [ngClass]="
+          {
+            'type-tag--flying': type.type.name === 'flying',
+            'type-tag--normal': type.type.name === 'normal',
+            'type-tag--grass': type.type.name === 'grass',
+            'type-tag--poison': type.type.name === 'poison',
+            'type-tag--water': type.type.name === 'water',
+            'type-tag--fire': type.type.name === 'fire',
+            'type-tag--bug': type.type.name === 'bug'
+
+          }">{{ type.type.name }}
+      </li>
+    </ul>
   
     <h2>Profile</h2>
-    <p>Height: {{ height }}</p>
+    <p>Height: {{ height }}</p> 
     <p>Weight: {{ weight }}</p>
     <p>Base XP: {{ xp }}</p>
+
 </div>

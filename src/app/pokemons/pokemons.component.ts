@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 // import the api service
 import { PokedexService } from '../pokedex.service';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-pokemons',
@@ -11,8 +12,10 @@ import { PokedexService } from '../pokedex.service';
 
 export class PokemonsComponent implements OnInit {
   count = '';
-  url = '';
   results = [];
+  urls = [];
+  ids = [];
+  sprites = [];
 
   // add the http client you want
   constructor( private http: PokedexService ) { }
@@ -27,4 +30,5 @@ export class PokemonsComponent implements OnInit {
       this.results = res.results;
     });
    }
+
 }
